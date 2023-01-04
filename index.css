@@ -68,7 +68,7 @@ li{
     color: white;
     transition: opacity 250ms ease;
     
-   
+    display: none;
 
     position: absolute;
     right: 0;
