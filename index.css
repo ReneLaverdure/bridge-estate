@@ -51,13 +51,68 @@ li{
 .navbar__links{
     display: flex;
     justify-content: space-between;
-    width: 15%;
+    width: 25%;
     margin-left: auto;
 }
 
+
+
+.nav--toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    transition: opacity 250ms ease;
+    
+   
+
+    position: absolute;
+    right: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+
+
+
 .hero{
     background-image: url('./img/estate2.jpg');
- 
+    background-position: center;
     min-height: 92vh;
 
 }
@@ -77,15 +132,14 @@ li{
 }
 
 .blogs{
-    /* min-height: 100vh; */
-    padding-bottom: 2rem;
+    min-height: 80vh;
     background-color: rgb(255, 250, 240);
 }
 
 .blogs__container{
     width: 80%;
     margin: 0 auto;
-    padding-top: 8rem;
+    padding: 8rem 0;
 }
 
 .blogs__heading{
@@ -110,7 +164,7 @@ li{
 
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     justify-content: space-between;
     
 }
@@ -171,27 +225,32 @@ div[class*='cardBlogs'] {
 .pannel-item{
     padding: 0;
     margin: 0;
-    width: 100%;
-    min-height: 100%;
+    /* width: 100%; */
+    /* min-height: 100%; */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     place-items: center;
 }
 
 .pannel-text{
-    width: 80%;
+    /* width: 80%; */
     padding: 5rem;
-    padding-top: 8rem;
+    /* padding-top: 3rem; */
 }
 
 
 .pannel-item img{
     width: 100%;
+
     object-fit: cover;
+    overflow: hidden;
 }
 
 .pannel__iconsContainer{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .pannel__iconsContainer{
@@ -222,7 +281,7 @@ div[class*='cardBlogs'] {
     background-color: aliceblue;
     padding: 4rem;
     margin: 10% ;
-    margin-top: 15rem;
+    margin-top: 10rem;
     width:40%;
 }
 
@@ -287,4 +346,61 @@ footer{
   width: 60%;
   display: flex;
   justify-content: space-between;
+}
+
+
+@media(max-width: 900px){
+    .hero-content{
+        width: 80%;
+    }
+
+    .navbar h1{
+        font-size: 2rem;
+    }
+
+    .lower__content{
+        width:80%;
+        margin-top: 5rem;
+    }
+
+    .pannel{
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+
+    .navbar__links{
+        visibility: hidden;
+        height: 0;
+        position: absolute;
+    }
+
+    .navbar__links{
+       display: none;
+        height: 0;
+        position: absolute;
+    }
+
+    .nav--toggle{
+        display: block;
+        margin-right: 3rem;
+    }
+
+    .navbar--visible{
+        visibility: visible ;
+        
+        position: absolute ;
+        top: 70px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        background-color: white;
+    }
+
+    .navbar--visible a{
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 1rem;
+    }
 }
